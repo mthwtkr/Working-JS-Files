@@ -1,0 +1,67 @@
+<script>
+var person = {
+	name: 'Matt',
+	distance_travelled: 0,
+	say_name: function () {
+		alert(this.name);
+	},
+	say_something: function(message) {
+		alert(this.name + " says '" + message + "'");
+	},
+	walk: function() {
+		alert(this.name + " is walking");
+		this.distance_travelled += 3;
+	},
+	run: function() {
+		alert(this.name + " is running"); 
+		this.distance_travelled += 10;
+	},
+	crawl: function() {
+		alert(this.name + " is crawling");
+		this.distance_travelled += 1;
+	},
+	do_something: function() {
+		var random = Math.floor((Math.random()*3)+1);
+		console.log(random);
+		if (random == 1) {
+			return this.walk();
+		}
+		else if (random == 2) {
+			return this.run();
+		}
+		else {
+			return this.crawl();
+		}
+	},
+	fly: function(arg1, arg2) {
+		var random = Math.floor((Math.random()*10)+1);
+		console.log(random);
+		if (random <= 7)
+		{
+			return arg1;
+		}
+		else
+		{
+			return arg2;
+		}
+	},
+	toFly: function() {
+		alert("This person is flying!!");
+	},
+	orNotToFly: function() {
+		alert("This person is not flying :( ")
+	}
+};
+
+person.say_name();
+person.say_something("that's cool!");
+person.walk();
+console.log("current distance travelled", person.distance_travelled);
+person.run();
+console.log("current distance travelled", person.distance_travelled);
+person.crawl();
+console.log("current distance travelled", person.distance_travelled);
+person.do_something();
+person.fly(person.orNotToFly, person.toFly)();
+
+</script>

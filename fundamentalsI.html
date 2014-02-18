@@ -1,0 +1,31 @@
+<script>
+var array = [3, 5, 'Dojo', 'rocks', {name: 'Michael', title: 'Sensei'}];
+// var toString = Object.prototype.toString;
+for (value in array)
+{
+	console.log(array[value] + ":" + toString.call(array[value]));
+}
+
+array.push(100);
+array.push(['Matt', 'Tucker'])
+console.log(array);
+
+var sum = 0;
+for (var i = 0; i < 500; i++) 
+{
+	sum += i;
+};
+console.log(sum);
+
+var start_time = new Date().getTime();
+var sum = 0;
+for (var i = 0; i < 1000000; i++) 
+{
+	sum += i;
+};
+console.log(sum);
+var end_time = new Date().getTime();
+var run_time = end_time - start_time;
+console.log(run_time/(1000*60) + " seconds");
+
+</script>
